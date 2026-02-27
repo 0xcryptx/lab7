@@ -212,6 +212,7 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: all var(--transition);
+    cursor: pointer;
 }
 
 .product-card:hover {
@@ -321,6 +322,116 @@ body {
     text-align: center;
     font-size: 0.9rem;
     opacity: 0.85;
+}
+
+/* === Product Detail Modal === */
+.product-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 42, 38, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    z-index: 300;
+}
+
+.product-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: min(90vw, 560px);
+    max-height: 90vh;
+    background: var(--color-warm-white);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(45, 42, 38, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
+    z-index: 301;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.product-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: var(--color-cream);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.product-modal-close:hover {
+    color: var(--color-text);
+}
+
+.product-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.product-modal-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.product-modal-info {
+    padding: 28px;
+}
+
+.product-modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.product-modal-desc {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.product-modal-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+}
+
+.product-modal-add {
+    width: 100%;
+}
+
+.product-card .add-to-cart {
+    cursor: pointer;
 }
 
 /* === Cart Panel === */
@@ -511,5 +622,13 @@ body {
 
     .cart-panel {
         width: 100%;
+    }
+
+    .product-modal {
+        width: 95vw;
+    }
+
+    .product-modal-image {
+        height: 220px;
     }
 }

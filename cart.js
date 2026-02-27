@@ -143,7 +143,8 @@
     cartOverlayEl.addEventListener('click', closeCart);
 
     document.querySelectorAll('.add-to-cart').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const card = btn.closest('.product-card');
             const name = card.dataset.name;
             const price = card.dataset.price;
@@ -151,5 +152,11 @@
             addToCart(name, price, image);
             openCart();
         });
+    });
+
+    document.addEventListener('add-to-cart', (e) => {
+        const { name, price, image } = e.detail;
+        addToCart(name, price, image);
+        openCart();
     });
 })();

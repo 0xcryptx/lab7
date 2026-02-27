@@ -39,42 +39,42 @@
                 <p class="section-subtitle">Discover our selection of freshly made sweets</p>
                 
                 <div class="product-grid">
-                    <article class="product-card" data-name="Chocolate Truffles" data-price="45" data-image="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400">
+                    <article class="product-card" data-name="Chocolate Truffles" data-price="45" data-image="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400" data-desc="Rich dark chocolate with a smooth ganache center">
                         <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400" alt="Chocolate Truffles" class="product-image">
                         <h3>Chocolate Truffles</h3>
                         <p class="product-desc">Rich dark chocolate with a smooth ganache center</p>
                         <p class="product-price">AED 45</p>
                         <button class="btn btn-secondary add-to-cart">Add to Cart</button>
                     </article>
-                    <article class="product-card" data-name="Rose Petal Macarons" data-price="38" data-image="assets/Rose Petal Macarons.jpg">
+                    <article class="product-card" data-name="Rose Petal Macarons" data-price="38" data-image="assets/Rose Petal Macarons.jpg" data-desc="Delicate almond shells with floral rose filling">
                         <img src="assets/Rose Petal Macarons.jpg" alt="Rose Petal Macarons" class="product-image">
                         <h3>Rose Petal Macarons</h3>
                         <p class="product-desc">Delicate almond shells with floral rose filling</p>
                         <p class="product-price">AED 38</p>
                         <button class="btn btn-secondary add-to-cart">Add to Cart</button>
                     </article>
-                    <article class="product-card" data-name="Caramel Bonbons" data-price="32" data-image="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=400">
+                    <article class="product-card" data-name="Caramel Bonbons" data-price="32" data-image="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=400" data-desc="Buttery caramel wrapped in milk chocolate">
                         <img src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?w=400" alt="Caramel Bonbons" class="product-image">
                         <h3>Caramel Bonbons</h3>
                         <p class="product-desc">Buttery caramel wrapped in milk chocolate</p>
                         <p class="product-price">AED 32</p>
                         <button class="btn btn-secondary add-to-cart">Add to Cart</button>
                     </article>
-                    <article class="product-card" data-name="Pistachio Brittle" data-price="28" data-image="assets/Pistachio Brittle.jpg">
+                    <article class="product-card" data-name="Pistachio Brittle" data-price="28" data-image="assets/Pistachio Brittle.jpg" data-desc="Crunchy toffee with roasted pistachios">
                         <img src="assets/Pistachio Brittle.jpg" alt="Pistachio Brittle" class="product-image">
                         <h3>Pistachio Brittle</h3>
                         <p class="product-desc">Crunchy toffee with roasted pistachios</p>
                         <p class="product-price">AED 28</p>
                         <button class="btn btn-secondary add-to-cart">Add to Cart</button>
                     </article>
-                    <article class="product-card" data-name="Lavender Honey Candy" data-price="25" data-image="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400">
+                    <article class="product-card" data-name="Lavender Honey Candy" data-price="25" data-image="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400" data-desc="Soft candies infused with lavender and honey">
                         <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400" alt="Lavender Honey Candy" class="product-image">
                         <h3>Lavender Honey Candy</h3>
                         <p class="product-desc">Soft candies infused with lavender and honey</p>
                         <p class="product-price">AED 25</p>
                         <button class="btn btn-secondary add-to-cart">Add to Cart</button>
                     </article>
-                    <article class="product-card" data-name="Date & Almond Box" data-price="42" data-image="assets/Date%20%26%20Almond%20Box.webp">
+                    <article class="product-card" data-name="Date & Almond Box" data-price="42" data-image="assets/Date%20%26%20Almond%20Box.webp" data-desc="Premium dates stuffed with roasted almonds">
                         <img src="assets/Date%20%26%20Almond%20Box.webp" alt="Date & Almond Box" class="product-image">
                         <h3>Date & Almond Box</h3>
                         <p class="product-desc">Premium dates stuffed with roasted almonds</p>
@@ -114,6 +114,21 @@
         </div>
     </footer>
 
+    <!-- Product Detail Modal -->
+    <div class="product-modal-overlay" id="product-modal-overlay"></div>
+    <div class="product-modal" id="product-modal">
+        <button class="product-modal-close" id="product-modal-close" aria-label="Close">&times;</button>
+        <div class="product-modal-content">
+            <img class="product-modal-image" id="product-modal-image" src="" alt="">
+            <div class="product-modal-info">
+                <h2 class="product-modal-title" id="product-modal-title"></h2>
+                <p class="product-modal-desc" id="product-modal-desc"></p>
+                <p class="product-modal-price" id="product-modal-price"></p>
+                <button class="btn btn-primary product-modal-add" id="product-modal-add">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Cart Panel -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <aside class="cart-panel" id="cart-panel">
@@ -133,5 +148,6 @@
     </aside>
 
     <script src="cart.js"></script>
+    <script src="product-modal.js"></script>
 </body>
 </html>
