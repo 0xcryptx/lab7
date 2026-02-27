@@ -159,4 +159,23 @@
         addToCart(name, price, image);
         openCart();
     });
+
+    window.addEventListener('beforeunload', function () {
+        sessionStorage.setItem('uowd-sweets-scroll', window.scrollY);
+    });
+
+    (function restoreScroll() {
+        const pos = sessionStorage.getItem('uowd-sweets-scroll');
+        if (pos === null) return;
+        sessionStorage.removeItem('uowd-sweets-scroll');
+        const y = parseInt(pos, 10);
+        function scrollToPos() {
+            window.scrollTo(0, y);
+        }
+        if (document.readyState === 'complete') {
+            requestAnimationFrame(scrollToPos);
+        } else {
+            window.addEventListener('load', scrollToPos);
+        }
+    })();
 })();
