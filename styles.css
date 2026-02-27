@@ -331,6 +331,7 @@ body {
     background: rgba(45, 42, 38, 0.5);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity var(--transition), visibility var(--transition);
     z-index: 300;
 }
@@ -338,6 +339,7 @@ body {
 .product-modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .product-modal {
@@ -352,6 +354,7 @@ body {
     box-shadow: 0 20px 60px rgba(45, 42, 38, 0.2);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
     z-index: 301;
     overflow: hidden;
@@ -362,6 +365,7 @@ body {
 .product-modal.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
 
